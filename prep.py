@@ -9,8 +9,6 @@ def getpagesource ():
 
 def getpage(url):
     settings.driver.get(url)
-#    selensetup.randomsleep()
-#    html = settings.driver.page_source
     html = getpagesource()
     return html
 
@@ -26,12 +24,20 @@ def makesoup(html):
     return page
 
 
-def findtext(soup, text):
+def findtextsoup(soup, text):
     #    y = soup.find_all(text=text)
     if len(soup.find_all(text=text)) != 0:
         return True
     else:
         return False
+
+
+def findtext (text):
+    if text in settings.driver.page_source:
+        return True
+    else:
+        return False
+
 
 
 def checkpage(soup):
