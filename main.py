@@ -49,7 +49,7 @@ def login():
 
 driver = selensetup.initucdriver(False)
 settings.init(driver)
-for i in range(4):
+for i in range(3):
     login()
 settings.end()
-#test
+#test2
